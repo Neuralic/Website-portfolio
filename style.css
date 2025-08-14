@@ -1,0 +1,231 @@
+/* Google Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a1a1a 100%);
+}
+
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: rgba(13, 27, 42, 0.7);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid #1f2e3d;
+}
+
+.logo-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+#brand-logo {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: glow 4s ease-in-out infinite;
+}
+
+/* Logo Glow Animation */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #007bff, 0 0 10px #007bff; }
+    50% { box-shadow: 0 0 10px #fd7e14, 0 0 15px #fd7e14; }
+    100% { box-shadow: 0 0 5px #007bff, 0 0 10px #007bff; }
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #fd7e14;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+nav a.active {
+    color: #fd7e14;
+}
+
+/* General Section Styling */
+section {
+    min-height: 100vh;
+    padding: 6rem 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #1f2e3d;
+}
+
+section h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+/* Hero Section */
+.hero-content h1 {
+    font-size: 4.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #fd7e14;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+.hero-content p {
+    max-width: 650px;
+    margin: 0 auto 2.5rem auto;
+    font-size: 1.1rem;
+    color: #b0b0b0;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background: linear-gradient(45deg, #fd7e14, #e66a00);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+.service-item {
+    max-width: 700px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+/* Projects Section */
+#projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.project-card {
+    background-color: #1f2e3d;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+    border-color: #fd7e14;
+}
+
+.project-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #fd7e14;
+}
+
+.project-card p {
+    margin-bottom: 2rem;
+    color: #b0b0b0;
+}
+
+/* Contact Section */
+#contact p {
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+/* Footer */
+footer {
+    padding: 2rem 5%;
+    text-align: center;
+    background-color: #0d1b2a;
+    border-top: 1px solid #1f2e3d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 3%;
+    }
+
+    nav ul {
+        display: none; /* Simple responsive solution: hide nav on mobile */
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+}
